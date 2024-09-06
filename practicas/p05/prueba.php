@@ -20,6 +20,7 @@
     $a = "ManejadorSQL";
     $b = 'MySQL';
     $c = &$a; // $c es una referencia a $a
+    
     // Imprimir valores de variables
     echo $_myvar; // Imprime "Hola"
     echo "<br>"; // Salto de línea en HTML
