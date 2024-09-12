@@ -80,8 +80,47 @@ include 'src/funciones.php';
     }
     ?>
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4 Arreglo ASCII </title>
+    <style>
+        table {
+            width: 50%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+            text-align: center;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Tabla ASCII de Letras a-z</h2>
 
+    <?php
+    // Crear el arreglo con índices de 97 a 122 y valores de 'a' a 'z'
+    $arreglo = [];
+    for ($i = 97; $i <= 122; $i++) {
+        $arreglo[$i] = chr($i);
+    }
 
+    // Mostrar el arreglo en una tabla XHTML
+    echo "<table>";
+    echo "<tr><th>Índice</th><th>Letra</th></tr>";
+
+    foreach ($arreglo as $key => $value) {
+        echo "<tr><td>$key</td><td>$value</td></tr>";
+    }
+
+    echo "</table>";
+    ?>
+
+</body>
+</html>
 
 
 
