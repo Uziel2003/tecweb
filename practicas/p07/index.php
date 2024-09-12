@@ -168,6 +168,96 @@ include 'src/funciones.php';
 </html>
 
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h2> Ejercicio 6 </h2>
+    <h3>Consulta de Parque Vehicular</h3>
+    <form action="index.php" method="POST">
+        <label for="matricula">Consultar por Matrícula:</label>
+        <input type="text" id="matricula" name="matricula" placeholder="LLLNNNN">
+        <input type="submit" name="consulta" value="Consultar">
+    </form>
+
+    <form action="index.php" method="POST">
+        <input type="submit" name="todos" value="Mostrar Todos los Autos">
+    </form>
+
+    <?php
+    // Arreglo asociativo de 15 autos
+    $parque_vehicular = [
+        'UBN6338' => [
+            'Auto' => ['marca' => 'HONDA', 'modelo' => 2020, 'tipo' => 'camioneta'],
+            'Propietario' => ['nombre' => 'Alfonzo Esparza', 'ciudad' => 'Puebla, Pue.', 'direccion' => 'C.U., Jardines de San Manuel']
+        ],
+        'UBN6339' => [
+            'Auto' => ['marca' => 'MAZDA', 'modelo' => 2019, 'tipo' => 'sedan'],
+            'Propietario' => ['nombre' => 'Ma. del Consuelo Molina', 'ciudad' => 'Puebla, Pue.', 'direccion' => '97 oriente']
+        ],
+        'ABC1234' => [
+            'Auto' => ['marca' => 'TOYOTA', 'modelo' => 2018, 'tipo' => 'sedan'],
+            'Propietario' => ['nombre' => 'Juan Pérez', 'ciudad' => 'Guadalajara, Jalisco', 'direccion' => 'Calle Falsa 123']
+        ],
+        'DEF5678' => [
+            'Auto' => ['marca' => 'NISSAN', 'modelo' => 2017, 'tipo' => 'hatchback'],
+            'Propietario' => ['nombre' => 'Luis Gómez', 'ciudad' => 'Monterrey, Nuevo León', 'direccion' => 'Avenida Siempreviva 456']
+        ],
+        // Agrega los registros restantes aquí...
+        'GHI9012' => [
+            'Auto' => ['marca' => 'FORD', 'modelo' => 2021, 'tipo' => 'camioneta'],
+            'Propietario' => ['nombre' => 'Carlos Martínez', 'ciudad' => 'CDMX', 'direccion' => 'Calle de las Flores 789']
+        ],
+        'JKL3456' => [
+            'Auto' => ['marca' => 'CHEVROLET', 'modelo' => 2016, 'tipo' => 'sedan'],
+            'Propietario' => ['nombre' => 'María López', 'ciudad' => 'Toluca, Estado de México', 'direccion' => 'Calle Estrella 101']
+        ],
+        'MNO7890' => [
+            'Auto' => ['marca' => 'KIA', 'modelo' => 2019, 'tipo' => 'hatchback'],
+            'Propietario' => ['nombre' => 'José Ramírez', 'ciudad' => 'Morelia, Michoacán', 'direccion' => 'Calle Luna 202']
+        ],
+        'PQR2345' => [
+            'Auto' => ['marca' => 'VOLKSWAGEN', 'modelo' => 2015, 'tipo' => 'camioneta'],
+            'Propietario' => ['nombre' => 'Laura García', 'ciudad' => 'Querétaro, Qro.', 'direccion' => 'Calle Sol 303']
+        ],
+        // Continúa con el resto de los registros...
+    ];
+
+    // Consultar por matrícula
+    if (isset($_POST['consulta']) && !empty($_POST['matricula'])) {
+        $matricula = strtoupper($_POST['matricula']); // Convertir la matrícula a mayúsculas
+        if (array_key_exists($matricula, $parque_vehicular)) {
+            echo "<h3>Información del Vehículo</h3>";
+            echo "<pre>";
+            print_r($parque_vehicular[$matricula]);
+            echo "</pre>";
+        } else {
+            echo "<p>No se encontró un vehículo con la matrícula: $matricula</p>";
+        }
+    }
+
+    // Mostrar todos los autos registrados
+    if (isset($_POST['todos'])) {
+        echo "<h3>Todos los Vehículos Registrados</h3>";
+        echo "<pre>";
+        print_r($parque_vehicular);
+        echo "</pre>";
+    }
+    ?>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
 
 
 
