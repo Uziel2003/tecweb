@@ -85,7 +85,8 @@ include 'src/funciones.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 4 Arreglo ASCII </title>
+    <h2>Ejercicio 4  </h2>
+    <h3> Arreglo ASCII </h3>
     <style>
         table {
             width: 50%;
@@ -99,7 +100,7 @@ include 'src/funciones.php';
     </style>
 </head>
 <body>
-    <h2>Tabla ASCII de Letras a-z</h2>
+    <h2>Tabla ascii de Letras a-z</h2>
 
     <?php
     // Crear el arreglo con índices de 97 a 122 y valores de 'a' a 'z'
@@ -124,6 +125,47 @@ include 'src/funciones.php';
 
 
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h2>Ejercico 5</h2>
+    <h3>Formulario de Validación de Edad y Sexo</h3>
+    <form action="index.php" method="POST">
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" name="edad" min="0" required>
+        <br><br>
+
+        <label for="sexo">Sexo:</label>
+        <select id="sexo" name="sexo" required>
+            <option value="">Seleccione su sexo</option>
+            <option value="femenino">Femenino</option>
+            <option value="masculino">Masculino</option>
+        </select>
+        <br><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+
+    <?php
+    // Procesar los datos del formulario si han sido enviados
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $edad = isset($_POST['edad']) ? intval($_POST['edad']) : 0;
+        $sexo = isset($_POST['sexo']) ? $_POST['sexo'] : '';
+
+        // Validamos los datos
+        if ($sexo === 'femenino' && $edad >= 18 && $edad <= 35) {
+            echo "<h3>Bienvenida, usted está en el rango de edad permitido.</h3>";
+        } else {
+            echo "<h3>Error: Usted no cumple con los requisitos.</h3>";
+        }
+    }
+    ?>
+</body>
+</html>
 
 
 
