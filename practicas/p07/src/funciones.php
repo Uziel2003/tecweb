@@ -46,3 +46,41 @@ function generarSecuenciaImparParImpar() {
     ];
 }
 ?>
+
+<?php
+// Función para encontrar el primer número aleatorio que sea múltiplo de un número dado usando while
+function encontrarMultiploWhile($numeroDado) {
+    $numeroAleatorio = 0;
+    $intentos = 0;
+
+    // Usamos un ciclo while para encontrar el múltiplo
+    while ($numeroAleatorio % $numeroDado != 0) {
+        $numeroAleatorio = rand(1, 100); // Generamos un número aleatorio entre 1 y 100
+        $intentos++; // Contamos el número de intentos
+    }
+
+    return [
+        'numeroAleatorio' => $numeroAleatorio,
+        'intentos' => $intentos
+    ];
+}
+?>
+
+<?php
+// Función para encontrar el primer número aleatorio que sea múltiplo de un número dado usando do-while
+function encontrarMultiploDoWhile($numeroDado) {
+    $numeroAleatorio = 0;
+    $intentos = 0;
+
+    // Usamos un ciclo do-while para encontrar el múltiplo
+    do {
+        $numeroAleatorio = rand(1, 100); // Generamos un número aleatorio entre 1 y 100
+        $intentos++; // Contamos el número de intentos
+    } while ($numeroAleatorio % $numeroDado != 0);
+
+    return [
+        'numeroAleatorio' => $numeroAleatorio,
+        'intentos' => $intentos
+    ];
+}
+?>
