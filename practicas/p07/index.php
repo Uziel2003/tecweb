@@ -25,6 +25,32 @@ include 'src/funciones.php';
     }
     ?>
 
+<h2>Ejercicio 2</h2>
+    <p>Generación repetitiva de 3 números aleatorios hasta obtener una secuencia impar, par, impar.</p>
+
+    <?php
+    // Llamamos a la función que genera la secuencia impar, par, impar
+    $resultado = generarSecuenciaImparParImpar();
+
+    // Mostramos la matriz con las secuencias generadas
+    echo "<h3>Secuencia generada (Impar, Par, Impar)</h3>";
+    echo "<table border='1'>";
+    foreach ($resultado['matriz'] as $fila) {
+        echo "<tr>";
+        foreach ($fila as $numero) {
+            echo "<td>$numero</td>";
+        }
+        echo "</tr>";
+    }
+    echo "</table>";
+
+    // Mostramos el número de iteraciones y la cantidad de números generados
+    echo "<p><strong>{$resultado['numerosGenerados']}</strong> números obtenidos en <strong>{$resultado['iteraciones']}</strong> iteraciones.</p>";
+    ?>
+
+
+
+
     <h2>Ejemplo de POST</h2>
     <form action="http://localhost/tecweb/practicas/p05/index.html" method="post">
         Name: <input type="text" name="name"><br>
