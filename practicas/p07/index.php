@@ -50,9 +50,50 @@ include 'src/funciones.php';
 
 
 
+<h2>Ejercicio 3</h2>
+    <p>Encuentra el primer número aleatorio que sea múltiplo de un número dado.</p>
+
+    <?php
+    // Verificamos si el parámetro 'numero' ha sido pasado por la URL
+    if (isset($_GET['numero'])) {
+        $numeroDado = intval($_GET['numero']); // Convertimos el valor en un entero
+
+        if ($numeroDado > 0) {
+            // Llamamos a la función para encontrar el múltiplo usando while
+            $resultadoWhile = encontrarMultiploWhile($numeroDado);
+
+            // Llamamos a la función para encontrar el múltiplo usando do-while
+            $resultadoDoWhile = encontrarMultiploDoWhile($numeroDado);
+
+            // Mostramos los resultados de la función con while
+            echo "<h3>Resultado usando ciclo <code>while</code></h3>";
+            echo "<p>Número encontrado: {$resultadoWhile['numeroAleatorio']} después de {$resultadoWhile['intentos']} intentos.</p>";
+
+            // Mostramos los resultados de la función con do-while
+            echo "<h3>Resultado usando ciclo <code>do-while</code></h3>";
+            echo "<p>Número encontrado: {$resultadoDoWhile['numeroAleatorio']} después de {$resultadoDoWhile['intentos']} intentos.</p>";
+        } else {
+            echo "Por favor, pasa un número mayor que 0 como parámetro en la URL. Ejemplo: ?numero=5";
+        }
+    } else {
+        echo "Por favor, pasa un número como parámetro en la URL. Ejemplo: ?numero=5";
+    }
+    ?>
+
+
+
+
+
+
+
+
+
+
+
+
 
     <h2>Ejemplo de POST</h2>
-    <form action="http://localhost/tecweb/practicas/p05/index.html" method="post">
+    <form action="http://localhost/tecweb/practicas/p05/supervariables.php" method="post">
         Name: <input type="text" name="name"><br>
         E-mail: <input type="text" name="email"><br>
         <input type="submit">
