@@ -1,23 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
     <head>
+        <meta charset="UTF-8">
         <title>Formulario</title>
     </head>
     <body>
         <!-- Formulario con método GET -->
         <h2>Formulario usando GET</h2>
         <form method="GET" action="http://localhost/tecweb/practicas/p05/supervariables.php">
-            <label for="form-valor1">Valor 1:</label>
-            <input type="text" name="valor1"><br>
+            <label for="valor1-get">Valor 1:</label>
+            <input type="text" name="valor1" id="valor1-get"><br>
             <input type="submit" value="Enviar">
         </form>
 
         <!-- Formulario con método POST -->
         <h2>Formulario usando POST</h2>
         <form method="POST" action="http://localhost/tecweb/practicas/p05/supervariables.php">
-            <label for="form-valor1">Valor 1:</label>
-            <input type="text" name="valor1"><br>
+            <label for="valor1-post">Valor 1:</label>
+            <input type="text" name="valor1" id="valor1-post"><br>
             <input type="submit" value="Enviar">
         </form>
     </body>
 </html>
+
