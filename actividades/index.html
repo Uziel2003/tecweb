@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <script src="src/main.js"></script>
+    <script>
+        function getDatos(){
+            var nombre = window.prompt("Nombre: ", "");
+            var edad = prompt("Edad: ", "");
+
+            var div1 = document.getElementById('nombre');
+            div1.innerHTML = '<h3> Nombre: ' + nombre + '</h3>'
+
+            var div1 = document.getElementById('edad');
+            div1.innerHTML = '<h3> Edad: ' + edad + '</h3>'
+                           }
+
+        function mostrarHolaMundo() {
+          document.write('Hola Mundo');
+                                    }
+
+    function mostrarVariables()        {
+    var nombre = 'Juan';
+    var edad = 10;
+    var altura = 1.92;
+    var casado = false;
+
+    document.write(nombre + '<br>');
+    document.write(edad + '<br>');
+    document.write(altura + '<br>');
+    document.write(casado + '<br>');   }
+
+    function mostrarSaludo() {
+    var nombre = prompt('Ingresa tu nombre:', '');
+    var edad = prompt('Ingresa tu edad:', '');
+
+    document.write('Hola ' + nombre + ', así que tienes ' + edad + ' años');
+                             }
+
+function calcularOperaciones() {
+    var valor1 = prompt('Introducir primer número:', '');
+    var valor2 = prompt('Introducir segundo número:', '');
+
+    var suma = parseInt(valor1) + parseInt(valor2);
+    var producto = parseInt(valor1) * parseInt(valor2);
+
+    document.write('La suma es ' + suma + '<br>');
+    document.write('El producto es ' + producto);
+                               }
+
+function evaluarAprobacion() {
+    var nombre = prompt('Ingresa tu nombre:', '');
+    var nota = prompt('Ingresa tu nota:', '');
+
+    if (nota >= 4) {
+        document.write(nombre + ' está aprobado con un ' + nota);
+    }
+                             }
+
+ function mostrarMayor() {
+    var num1 = prompt('Ingresa el primer número:', '');
+    var num2 = prompt('Ingresa el segundo número:', '');
+
+    num1 = parseInt(num1);
+    num2 = parseInt(num2);
+
+    if (num1 > num2) {
+        document.write('El mayor es ' + num1);
+    } else {
+        document.write('El mayor es ' + num2);
+    }
+                        }
+
+ function evaluarPromedio() {
+    var nota1 = prompt('Ingresa 1ra. nota:', '');
+    var nota2 = prompt('Ingresa 2da. nota:', '');
+    var nota3 = prompt('Ingresa 3ra. nota:', '');
+
+    // Convertir los valores a enteros
+    nota1 = parseInt(nota1);
+    nota2 = parseInt(nota2);
+    nota3 = parseInt(nota3);
+
+    var promedio = (nota1 + nota2 + nota3) / 3;
+
+    if (promedio >= 7) {
+        document.write('Aprobado');
+    } else if (promedio >= 4) {
+        document.write('Regular');
+    } else {
+        document.write('Reprobado');
+    }
+                          }
+
+function convertirValor() {
+    var valor = prompt('Ingresar un valor comprendido entre 1 y 5:', '');
+    // Convertir el valor a entero
+    valor = parseInt(valor);
+    switch (valor) {
+        case 1: 
+            document.write('uno');
+            break;
+        case 2: 
+            document.write('dos');
+            break;
+        case 3: 
+            document.write('tres');
+            break;
+        case 4: 
+            document.write('cuatro');
+            break;
+        case 5: 
+            document.write('cinco');
+            break;
+        default:
+            document.write('Debe ingresar un valor comprendido entre 1 y 5.');
+    }
+                         }
+
+    function cambiarColorFondo() {
+    var col = prompt('Ingresa el color con que quieres pintar el fondo de la ventana (rojo, verde, azul):', '');
+    
+    switch (col.toLowerCase()) {
+        case 'rojo':
+            document.bgColor = '#ff0000'; // Fondo rojo
+            break;
+        case 'verde':
+            document.bgColor = '#00ff00'; // Fondo verde
+            break;
+        case 'azul':
+            document.bgColor = '#0000ff'; // Fondo azul
+            break;
+        default:
+            alert('Por favor, ingresa uno de los colores especificados (rojo, verde, azul).');
+    }
+                                }
+
+ function mostrarNumeros() {
+    var x = 1;
+    var resultado = ''; // Variable para acumular los números y saltos de línea
+    
+    while (x <= 100) {
+        resultado += x + '<br>'; // Concatenar los números y saltos de línea
+        x++;
+    }
+
+    // Mostrar el resultado dentro del div 'numeros'
+    document.getElementById('numeros').innerHTML = resultado;
+                          }
+
+function sumarValores() {
+    var x = 1;
+    var suma = 0;
+    var valor;
+    while (x <= 5) {
+        valor = prompt('Ingresa el valor:', '');
+        valor = parseInt(valor);
+        suma += valor; // Sumar el valor ingresado
+        x++;
+    }
+    // Mostrar el resultado en el div 'resultadoSuma'
+    document.getElementById('resultadoSuma').innerHTML = "La suma de los valores es " + suma + "<br>";
+                        }
+
+function contarDigitos() {
+    var valor;
+    do {
+        valor = prompt('Ingresa un valor entre 0 y 999:', '');
+        valor = parseInt(valor);
+        document.write('El valor ' + valor + ' tiene ');
+        if (valor < 10 && valor >= 0) {
+            document.write('1 dígito');
+        } else if (valor < 100) {
+            document.write('2 dígitos');
+        } else if (valor < 1000) {
+            document.write('3 dígitos');
+        } else if (valor < 0) {
+            document.write('no es un número válido'); // Para manejar valores negativos
+        }
+        document.write('<br>');
+    } while (valor !== 0);
+                        }
+
+function mostrarNumerosFor() {
+    var output = ""; // Variable para almacenar la salida
+    for (var f = 1; f <= 10; f++) {
+        output += f + " "; // Agregar el número seguido de un espacio
+    }
+    // Mostrar el resultado en el div 'resultadoFor'
+    document.getElementById('resultadoFor').innerHTML = output;
+                             }
+
+function mostrarAdvertencias() {
+    document.write("Cuidado<br>");
+    document.write("Ingresa tu documento correctamente<br>");
+    document.write("Cuidado<br>");
+    document.write("Ingresa tu documento correctamente<br>");
+    document.write("Cuidado<br>");
+    document.write("Ingresa tu documento correctamente<br>");
+                              }
+      function mostrarMensaje() {
+    document.write("Cuidado<br>");
+    document.write("Ingresa tu documento correctamente<br>");}
+
+function ejecutarAdvertencias() {
+    // Llamamos a mostrarMensaje tres veces
+    mostrarMensaje();
+    mostrarMensaje();
+    mostrarMensaje();           }
+    function mostrarRango(x1, x2) {
+    var inicio;
+    for (inicio = x1; inicio <= x2; inicio++) {
+        document.write(inicio + ' ');
+    }                         }
+function pedirValoresYMostrarRango() {
+    var valor1, valor2;
+    valor1 = prompt('Ingresa el valor inferior:', '');
+    valor1 = parseInt(valor1);
+    valor2 = prompt('Ingresa el valor superior:', '');
+    valor2 = parseInt(valor2);
+    mostrarRango(valor1, valor2);   }
+
+    function convertirCastellano(x)   {
+    if (x == 1)
+        return "uno";
+    else if (x == 2)
+        return "dos";
+    else if (x == 3)
+        return "tres";
+    else if (x == 4)
+        return "cuatro";
+    else if (x == 5)
+        return "cinco";
+    else
+        return "valor incorrecto";}
+function pedirValorYConvertir() {
+    var valor = prompt("Ingresa un valor entre 1 y 5", "");
+    valor = parseInt(valor);
+    var resultado = convertirCastellano(valor);
+    document.write(resultado);  }
+
+    function convertirCastellano(x) {
+    switch (x) {
+        case 1: return "uno";
+        case 2: return "dos";
+        case 3: return "tres";
+        case 4: return "cuatro";
+        case 5: return "cinco";
+        default: return "valor incorrecto";
+    }                               }
+function pedirValorYConvertir() {
+    var valor = prompt("Ingresa un valor entre 1 y 5", "");
+    valor = parseInt(valor);
+    var resultado = convertirCastellano(valor);
+    document.write(resultado);  }
+</script>
+</head>
+<body>
+    <h1>Hola Mundo de JavaScript</h1>
+
+    <div id="nombre"></div>
+    <div id="edad"></div>
+    <input type="button" id="Dame tu nombre y edad" onclick="getDatos();" value="Dame tu nombre y edad">
+
+         <!-- ejemplo 1-->
+    <div id="holaMundo"></div>
+    <button onclick="mostrarHolaMundo()">Mostrar Hola Mundo</button>
+
+         <!-- ejemplo 2-->
+    <!-- ojo: document.write sobreescribe el contenido de la página -->
+    <div id="variables"></div>
+    <button onclick="mostrarVariables()">Mostrar Variables</button>
+
+         <!-- ejemplo 3-->
+    <!-- igual lo de arriba: document.write sobreescribe el contenido de la página -->
+    <div id="saludo"></div>
+    <button onclick="mostrarSaludo()">Mostrar Saludo</button>
+
+     <!-- ejemplo 4-->
+    <!-- igual lo de arriba: document.write sobreescribe el contenido de la página -->
+    <div id="operaciones"></div>
+    <button onclick="calcularOperaciones()">Calcular Suma y Producto</button>
+
+     <!-- ejemplo 5-->
+    <div id="aprobacion"></div>
+    <button onclick="evaluarAprobacion()">Evaluar Aprobación</button>
+
+     <!-- ejemplo 6-->
+    <div id="comparacion"></div>
+    <button onclick="mostrarMayor()">Comparar Números</button>
+
+     <!-- ejemplo 7-->
+    <div id="promedio"></div>
+    <button onclick="evaluarPromedio()">Calcular Promedio</button>
+
+     <!-- ejemplo 8-->
+    <div id="valor"></div>
+    <button onclick="convertirValor()">Convertir Valor</button>
+
+     <!-- ejemplo 9-->
+     <div id="colorFondo"></div>
+     <button onclick="cambiarColorFondo()">Cambiar Color de Fondo</button>
+
+     <!-- ejemplo 10-->
+     <div id="numeros"></div>
+    <button onclick="mostrarNumeros()">Mostrar Números del 1 al 100</button>
+
+     <!-- ejemplo 11-->
+     <div id="resultadoSuma"></div>
+    <button onclick="sumarValores()">Sumar Valores</button>
+
+     <!-- ejemplo 12-->
+     <div id="resultadoDigitos"></div>
+    <button onclick="contarDigitos()">Contar Dígitos</button>
+
+     <!-- ejemplo 13-->
+     <div id="resultadoFor"></div>
+    <button onclick="mostrarNumerosFor()">Mostrar Números del 1 al 10</button>
+
+     <!-- ejemplo 14-->
+     <div id="resultadoAdvertencias"></div>
+    <button onclick="mostrarAdvertencias()">Mostrar Advertencias</button>
+
+     <!-- ejemplo 15-->
+     <div id="mensajeAdvertencia"></div>
+    <button onclick="ejecutarAdvertencias()">Mostrar Mensaje Tres Veces</button>
+
+     <!-- ejemplo 16-->
+     <div id="rango"></div>
+    <button onclick="pedirValoresYMostrarRango()">Mostrar Rango entre Dos Valores</button>
+
+     <!-- ejemplo 17-->
+     <div id="castellano"></div>
+     <button onclick="pedirValorYConvertir()">Convertir Número a Castellano</button>
+
+     <!-- ejemplo 18-->
+     <div id="castellano"></div>
+     <button onclick="pedirValorYConvertir()">Convertir Número a Castellano</button>
+
+ 
+</body>
+</html>
