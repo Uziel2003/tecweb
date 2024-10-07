@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,8 +20,8 @@
                 return false;
             }
 
-             // Validación del modelo (sin restricción de formato)
-             var modelo = document.getElementById("modelo").value;
+            // Validación del modelo (sin restricción de formato)
+            var modelo = document.getElementById("modelo").value;
             if (modelo === "" || modelo.length > 25) {
                 alert("El modelo es requerido y debe tener 25 caracteres o menos.");
                 return false;
