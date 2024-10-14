@@ -1,57 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
-    <title>Product App</title>
-  </head>
-  <body onload="init()">
-
-    <!-- BARRA DE NAVEGACIÓN  -->
-    <nav>
-      <a href="#">Product App</a>
-      
-        <ul></ul>
-        <form>
-          <input name="search" id="search" type="search" placeholder="ID">
-          <button type="submit" onclick="buscarID(event)">Buscar</button>
-        </form>
-    </nav>
-
-    <div>
-      <div>
-        <!-- FORMULARIO PARA AGREGAR PRODUCTO -->
-        <form id="task-form">
-          <div>
-            <input type="text" id="name" placeholder="Nombre de producto">
-          </div>
-          <div>
-            <textarea id="description" cols="30" rows="10" placeholder="JSON de producto"></textarea>
-          </div>
-          <input type="hidden" id="taskId">
-          <button type="submit" onclick="agregarProducto(event)" >
-            Agregar Producto
-          </button>
-        </form>
-      </div>
-
-      <!-- TABLA  -->
-      <div>
-        <ul></ul>
-
-        <table>
-          <thead>
-            <tr>
-              <td>Id</td>
-              <td>Nombre</td>
-              <td>Descripcion</td>
-            </tr>
-          </thead>
-          <tbody id="productos"></tbody>
-        </table>
-      </div>
-    </div>
-
-    <!-- Lógica del Frontend -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Producto</title>
     <script src="./app.js"></script>
-  </body>
+</head>
+<body onload="init()">
+    <h1>Agregar Producto</h1>
+
+    <form id="formProducto" onsubmit="agregarProducto(event)">
+        <label for="name">Nombre del Producto:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="precio">Precio:</label>
+        <input type="number" id="precio" name="precio" step="0.01" required><br><br>
+
+        <label for="unidades">Unidades:</label>
+        <input type="number" id="unidades" name="unidades" required><br><br>
+
+        <label for="description">Descripción JSON del Producto:</label>
+        <textarea id="description" rows="10" cols="50"></textarea><br><br>
+
+        <button type="submit">Agregar Producto</button>
+    </form>
+
+    <div id="resultado"></div>
+</body>
 </html>
+
+<form onsubmit="buscarProducto(event)">
+  <input type="text" id="search" placeholder="Buscar productos">
+  <button type="submit">Buscar</button>
+</form>
+
+<table>
+  <thead>
+      <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody id="productos">
+      <!-- Los productos se mostrarán aquí -->
+  </tbody>
+</table>
