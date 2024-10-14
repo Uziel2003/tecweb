@@ -10,34 +10,28 @@
     <script>
         function sendRequest() {
             var client = new XMLHttpRequest();
-            /** 
-             * SOLICITUD AL SERVIDOR:
-             *  Prototipo de open:      XMLHttpRequest.open(method, url, async)
-             *  ver https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/open 
-             * */
-            client.open('POST', './backend.php', false);
-            /**
-             * TIPO DE DATOS SOLICITADOS
-             * */
+            
+            // Abrir la conexión de manera asíncrona (true)
+            client.open('POST', './backend1.php', true);
+
+            // Tipo de datos a enviar
             client.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-            /**
-             * SEGUIMIENTO DE LOS DATOS RECIBIDOS DEL SERVIDOR
-             * */
+
+            // Función para manejar los cambios en el estado de la solicitud
             client.onreadystatechange = function () {
-                //console.log(client.responseText);
-                document.getElementById('titulo').innerHTML = client.responseText;
+                if (client.readyState === 4 && client.status === 200) {
+                    // Actualiza el contenido del h1 con la respuesta del servidor
+                    document.getElementById('titulo').innerHTML = client.responseText;
+                }
             };
-            /**
-             * SE ENVÍA LA SOLICITUD CON LAS CONSIDERACIONES ANTERIORES
-             * */
-            client.send("usuario=elelegido&password=12345678a");
+
+            // Enviar los datos de usuario y contraseña al servidor
+            client.send("usuario=UzielFlores&password=UzielNavez");
         }
     </script>
 
     <h1 id="titulo"></h1>
 
-    <button onclick="sendRequest()">
-        Hola Mundo
-    </button>
+    <button onclick="sendRequest()">Hola Mundo</button>
 </body>
 </html>
