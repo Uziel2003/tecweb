@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX Simple</title>
+</head>
+<body>
+    <script>
+        function sendRequest() {
+            var client = new XMLHttpRequest();
+            
+            // Abrir la conexión de manera asíncrona (true)
+            client.open('POST', './backend1.php', true);
+
+            // Tipo de datos a enviar
+            client.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+            // Función para manejar los cambios en el estado de la solicitud
+            client.onreadystatechange = function () {
+                if (client.readyState === 4 && client.status === 200) {
+                    // Actualiza el contenido del h1 con la respuesta del servidor
+                    document.getElementById('titulo').innerHTML = client.responseText;
+                }
+            };
+
+            // Enviar los datos de usuario y contraseña al servidor
+            client.send("usuario=UzielFlores&password=UzielNavez");
+        }
+    </script>
+
+    <h1 id="titulo"></h1>
+
+    <button onclick="sendRequest()">Hola Mundo</button>
+</body>
+</html>
