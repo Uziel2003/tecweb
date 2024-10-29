@@ -238,9 +238,9 @@ function marca(mar){
 }
 
 function modelo(model){
-    let regex = /^[a-zA-Z0-9]{1,25}$/; // Expresión regular
-    if(model.length > 25 || regex.test(model) == false){
-        alert("El modelo debe de ser de menos de 25 caracteres y tener caracteres validos");
+    let regex = /^[a-zA-Z0-9]{1,5}$/; // Expresión regular
+    if(model.length > 5 || regex.test(model) == false){
+        alert("El modelo debe de ser de menos de 5 caracteres y tener caracteres validos");
         return true;
     }else{
         return false;
