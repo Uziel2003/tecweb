@@ -1,0 +1,7 @@
+{
+    "autoload": {
+        "psr-4": {
+            "TuNamespace\\": "htdocs/p13-product_app-con_clases/product_app"
+        }
+    }
+}
