@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE serviciovod SYSTEM "serviciovod_ep.dtd">
+<serviciovod>
+    <peliculas region="USA">
+        <video id="1">
+            <titulo>El Padrino</titulo>
+            <genero>Drama</genero>
+            <duracion>175</duracion>
+            <clasificacion>R</clasificacion>
+            <anio>1972</anio>
+        </video>
+    </peliculas>
+    <series region="ESP">
+        <video id="3">
+            <titulo>La Casa de Papel</titulo>
+            <genero>Drama</genero>
+            <duracion>45</duracion>
+            <clasificacion>TV-MA</clasificacion>
+            <temporada>1</temporada>
+            <episodio>1</episodio>
+        </video>
+    </series>
+</serviciovod>

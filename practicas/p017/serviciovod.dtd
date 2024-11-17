@@ -1,0 +1,12 @@
+<!ELEMENT serviciovod (peliculas, programas)>
+<!ELEMENT peliculas (video+)>
+<!ELEMENT programas (video+)>
+<!ELEMENT video (titulo, genero, duracion, clasificacion, anio?, temporada?, episodio?)>
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT genero (#PCDATA)>
+<!ELEMENT duracion (#PCDATA)>
+<!ELEMENT clasificacion (#PCDATA)>
+<!ELEMENT anio (#PCDATA)>
+<!ELEMENT temporada (#PCDATA)>
+<!ELEMENT episodio (#PCDATA)>
+<!ATTLIST video id CDATA #REQUIRED>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE cinefanatico SYSTEM "cinefanatico.dtd">
+<cinefanatico>
+    <tarjeta noserie="CF001" visitas="15" puntos="1500">
+        <nombre>Juan Pérez</nombre>
+        <correo>juan.perez@email.com</correo>
+        <telefono tipo="movil">555-0123</telefono>
+        <telefono tipo="casa">555-4567</telefono>
+    </tarjeta>
+    <tarjeta noserie="CF002" visitas="8" puntos="800">
+        <nombre>María García</nombre>
+        <correo>maria.garcia@email.com</correo>
+        <telefono tipo="movil">555-8901</telefono>
+    </tarjeta>
+</cinefanatico>
