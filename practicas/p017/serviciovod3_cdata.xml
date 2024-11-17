@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serviciovod>
+    <peliculas>
+        <!-- Segundo título usando CDATA -->
+        <video id="12">
+            <titulo><![CDATA[<video id="11">&lt;/video>]]></titulo>
+            <genero>Acción</genero>
+            <duracion>95</duracion>
+            <clasificacion>R</clasificacion>
+        </video>
+    </peliculas>
+    <programas>
+        <video id="3">
+            <titulo>Breaking Bad</titulo>
+            <genero>Drama</genero>
+            <duracion>45</duracion>
+            <clasificacion>TV-MA</clasificacion>
+            <temporada>1</temporada>
+            <episodio>1</episodio>
+        </video>
+    </programas>
+</serviciovod>

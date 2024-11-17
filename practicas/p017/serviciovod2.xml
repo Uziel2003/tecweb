@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE serviciovod SYSTEM "serviciovod.dtd">
+<serviciovod>
+    <peliculas>
+        <video id="1">
+            <titulo>El Padrino</titulo>
+            <genero>Drama</genero>
+            <duracion>175</duracion>
+            <clasificacion>R</clasificacion>
+            <anio>1972</anio>
+        </video>
+        <video id="2">
+            <titulo>Matrix</titulo>
+            <genero>Ciencia Ficción</genero>
+            <duracion>136</duracion>
+            <clasificacion>R</clasificacion>
+            <anio>1999</anio>
+        </video>
+    </peliculas>
+    <programas>
+        <video id="3">
+            <titulo>Breaking Bad</titulo>
+            <genero>Drama</genero>
+            <duracion>45</duracion>
+            <clasificacion>TV-MA</clasificacion>
+            <temporada>1</temporada>
+            <episodio>1</episodio>
+        </video>
+    </programas>
+</serviciovod>

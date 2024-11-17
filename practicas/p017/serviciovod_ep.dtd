@@ -1,0 +1,15 @@
+<!ENTITY % regiones "(MEX|USA|ESP|ARG|KOR)">
+<!ELEMENT serviciovod (peliculas, series)>
+<!ELEMENT peliculas (video+)>
+<!ELEMENT series (video+)>
+<!ELEMENT video (titulo, genero, duracion, clasificacion, anio?, temporada?, episodio?)>
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT genero (#PCDATA)>
+<!ELEMENT duracion (#PCDATA)>
+<!ELEMENT clasificacion (#PCDATA)>
+<!ELEMENT anio (#PCDATA)>
+<!ELEMENT temporada (#PCDATA)>
+<!ELEMENT episodio (#PCDATA)>
+<!ATTLIST video id CDATA #REQUIRED>
+<!ATTLIST peliculas region %regiones; "USA">
+<!ATTLIST series region %regiones; "USA">
